@@ -4,6 +4,7 @@ public class HangmanGame {
     static Scanner scanner = new Scanner(System.in);
     static int numberOfErrors = 0;
     static String wordToGuess;
+    static String alreadyGuessed;
 
     public static void startGame() {
         // Print Intro
@@ -44,7 +45,7 @@ public class HangmanGame {
             numberOfErrors++;
         }
     }
-    public static void checkWinOrLoose() {
+    public static void checkWin() {
         // Loose if number of errors >= 7
         // win if userguess matches with word
     }
@@ -116,6 +117,16 @@ public class HangmanGame {
             System.out.println(" Sorry you lost");
         }
     }
+
+    public static String drawCorrectGuesses(String guess) {
+        // For every letter in wordToGuess we need to check if guess is equal and return this String and add it to alreadyGUessed
+        // If no match add an Underscore
+        // Return the made up strings nd save it to another variable: alreadyGuessed
+
+        return "";
+
+    }
+
 
 
 
