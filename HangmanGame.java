@@ -15,7 +15,7 @@ public class HangmanGame {
         System.out.println("So choose wise.");
         wordToGuess = Words.getRandomWord();
         // Initialise alreadyGuessed
-        for (int i = 0; i < wordToGuess.length()-1;i++) {
+        for (int i = 0; i < wordToGuess.length() - 1; i++) {
             alreadyGuessed = alreadyGuessed + "_";
         }
 
@@ -29,6 +29,7 @@ public class HangmanGame {
         // ask user for input ? If correct input showLetters.
         // if input wrong -> increase numberOfErrors and draw hangman
         getUserInput();
+        drawAlreadyGuessed();
 
     }
 
@@ -45,9 +46,9 @@ public class HangmanGame {
         }
 
         if (wordToGuess.toUpperCase().contains(guess.toUpperCase())) {
-            // method to draw right guesses
-        }
-        else {
+            drawCorrectGuesses(guess.toUpperCase());
+
+        } else {
             System.out.printf("%s not correct try again", guess);
             numberOfErrors++;
         }
@@ -127,25 +128,29 @@ public class HangmanGame {
         }
     }
 
-    public static String drawCorrectGuesses(String guess) {
+    public static void drawCorrectGuesses(String guess) {
         // For every letter in wordToGuess we need to check if guess is equal and return this String and add it to alreadyGUessed
         // If no match add an Underscore
         // Return the made up strings nd save it to another variable: alreadyGuessed
-        for (int i=0;i<wordToGuess.length()-1;i++){
-            if (wordToGuess.charAt(i)==guess.charAt(0)){
+
+        for (int i = 0; i < wordToGuess.length() - 1; i++) {
+            if (wordToGuess.charAt(i) == guess.charAt(0)) {
                 alreadyGuessed += guess.charAt(0);
 
-            }else
-            {
-                alreadyGuessed+= alreadyGuessed.charAt(i);
+            } else {
+                alreadyGuessed += alreadyGuessed.charAt(i);
             }
         }
-        return alreadyGuessed;
+
 
     }
 
+    public static void drawAlreadyGuessed() {
+        System.out.println(alreadyGuessed);
+        for (int i = 0; i <= alreadyGuessed.length() - 1; i++) {
+            System.out.print(alreadyGuessed.charAt(i) + " ");
+        }
 
 
-
-
+    }
 }
