@@ -35,6 +35,10 @@ public class HangmanGame {
            }
            drawHangman(numberOfErrors);
            getUserInput();
+           if (checkWin()) {
+               System.out.println("You Win!! You are still alive!!!");
+               break;
+           }
            drawAlreadyGuessed();
 
        }
@@ -62,9 +66,13 @@ public class HangmanGame {
         }
     }
 
-    public static void checkWin() {
+    public static boolean checkWin() {
         // Loose if number of errors >= 7
         // win if userguess matches with word
+        if (alreadyGuessed.toUpperCase().equals(wordToGuess.toUpperCase())){
+            return true;
+        }
+        return false;
     }
 
     public static void drawHangman(int numberOfErrors) {
@@ -144,7 +152,7 @@ public class HangmanGame {
 
 
 
-        for (int i = 0; i < wordToGuess.length() - 1; i++) {
+        for (int i = 0; i < wordToGuess.length() ; i++) {
             if (wordToGuess.charAt(i) == guess.charAt(0)) {
                alreadyGuessed = alreadyGuessed.substring(0,i)+ guess.charAt(0) +alreadyGuessed.substring(i+1);
 
