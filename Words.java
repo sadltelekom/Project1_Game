@@ -11,8 +11,8 @@ public class Words {
     }
 
     public static void drawGuessingDashes(String searchWord) {
-        // TODO disable cheat mode:
-        System.out.println(searchWord);
+
+        //System.out.println(searchWord);
 
         for (int i = 0;i <= searchWord.length() - 1;i++) {
             System.out.print("_ ");

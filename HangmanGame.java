@@ -28,10 +28,17 @@ public class HangmanGame {
     public static void runGame() {
         // ask user for input ? If correct input showLetters.
         // if input wrong -> increase numberOfErrors and draw hangman
-        getUserInput();
-        drawAlreadyGuessed();
-        getUserInput();
-        drawAlreadyGuessed();
+       while (numberOfErrors<=7){
+           if(numberOfErrors==7){
+               drawHangman(numberOfErrors);
+               break;
+           }
+           drawHangman(numberOfErrors);
+           getUserInput();
+           drawAlreadyGuessed();
+
+       }
+
     }
 
     public static void getUserInput() {
@@ -136,7 +143,7 @@ public class HangmanGame {
         // need to replace Chars instead of concatinating
 
 
-        System.out.println(alreadyGuessed);
+
         for (int i = 0; i < wordToGuess.length() - 1; i++) {
             if (wordToGuess.charAt(i) == guess.charAt(0)) {
                alreadyGuessed = alreadyGuessed.substring(0,i)+ guess.charAt(0) +alreadyGuessed.substring(i+1);
@@ -150,11 +157,11 @@ public class HangmanGame {
     }
 
     public static void drawAlreadyGuessed() {
-        System.out.println(alreadyGuessed);
+
         for (int i = 0; i <= alreadyGuessed.length() - 1; i++) {
             System.out.print(alreadyGuessed.charAt(i) + " ");
         }
-
+        System.out.println();
 
     }
 }
