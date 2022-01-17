@@ -17,7 +17,72 @@ public class HangmanGame {
         // win if userguess matches with word
     }
     public static void drawHangman(int numberOfErrors) {
-        // Draw Hangman according to number of errors.
+        if (numberOfErrors == 0) {
+            System.out.println("_____ ");
+            System.out.println("|   |");
+            System.out.println("|   O");
+            System.out.println("|  /|\\ ");
+            System.out.println("|   |");
+            System.out.println("| _/ \\_");
+            System.out.println("________");
+        } else if (numberOfErrors == 1) {
+            System.out.println("_____ ");
+            System.out.println("|   |");
+            System.out.println("|    ");
+            System.out.println("|       ");
+            System.out.println("|   ");
+            System.out.println("| _/  ");
+            System.out.println("________");
+        } else if (numberOfErrors == 2) {
+            System.out.println("_____ ");
+            System.out.println("|   |");
+            System.out.println("|    ");
+            System.out.println("|       ");
+            System.out.println("|    ");
+            System.out.println("| _/ \\_");
+            System.out.println("________");
+        } else if (numberOfErrors == 3) {
+            System.out.println("_____ ");
+            System.out.println("|   |");
+            System.out.println("|    ");
+            System.out.println("|       ");
+            System.out.println("|   |");
+            System.out.println("| _/ \\_");
+            System.out.println("________");
+        } else if (numberOfErrors == 4) {
+            System.out.println("_____ ");
+            System.out.println("|   |");
+            System.out.println("|    ");
+            System.out.println("|   | ");
+            System.out.println("|   |");
+            System.out.println("| _/ \\_");
+            System.out.println("________");
+        } else if (numberOfErrors == 5) {
+            System.out.println("_____ ");
+            System.out.println("|   |");
+            System.out.println("|    ");
+            System.out.println("|  /|  ");
+            System.out.println("|   |");
+            System.out.println("| _/ \\_");
+            System.out.println("________");
+        } else if (numberOfErrors == 6) {
+            System.out.println("_____ ");
+            System.out.println("|   |");
+            System.out.println("|    ");
+            System.out.println("|  /|\\ ");
+            System.out.println("|   |");
+            System.out.println("| _/ \\_");
+            System.out.println("________");
+        } else if (numberOfErrors == 7) {
+            System.out.println("_____ ");
+            System.out.println("|   |");
+            System.out.println("|   O");
+            System.out.println("|  /|\\ ");
+            System.out.println("|   |");
+            System.out.println("| _/ \\_");
+            System.out.println("________");
+            System.out.printf(" Sorry you lost");
+        }
     }
 
 
