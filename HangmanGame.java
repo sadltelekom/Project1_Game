@@ -58,10 +58,10 @@ public class HangmanGame {
         }
 
         if (wordToGuess.toUpperCase().contains(guess.toUpperCase())) {
-            drawCorrectGuesses(guess.toUpperCase());
+            replaceAlreadyGuessedLetters(guess.toUpperCase());
 
         } else {
-            System.out.printf("%s not correct try again", guess);
+            System.out.printf("%s not correct try again\n", guess);
             numberOfErrors++;
         }
     }
@@ -144,7 +144,7 @@ public class HangmanGame {
         }
     }
 
-    public static void drawCorrectGuesses(String guess) {
+    public static void replaceAlreadyGuessedLetters(String guess) {
         // For every letter in wordToGuess we need to check if guess is equal and return this String and add it to alreadyGUessed
         // If no match add an Underscore
         // Return the made up strings nd save it to another variable: alreadyGuessed
@@ -153,7 +153,9 @@ public class HangmanGame {
 
 
         for (int i = 0; i < wordToGuess.length() ; i++) {
+
             if (wordToGuess.charAt(i) == guess.charAt(0)) {
+                //go zamenuva karakterot sto e ednakov so karaterot na userot - go replace the character that is equal with the character of the user input
                alreadyGuessed = alreadyGuessed.substring(0,i)+ guess.charAt(0) +alreadyGuessed.substring(i+1);
 
             } else {

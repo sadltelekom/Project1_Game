@@ -1,7 +1,7 @@
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Words {
-   static String[] wordsArray = {"Xylophon","President","Carnival","Football","Spiderman","thumbscrew","transgress","jiujitsu","wyvern","curacao"};
+   static String[] wordsArray = {"Xylophon","stronghold","yachtsman","espionage","exodus","fishhook","fluffiness","kilobyte","President","Carnival","Football","Spiderman","nightclub","puzzling","schnapps","thumbscrew","transgress","jiujitsu","wyvern","curacao"};
 
 
     public static String getRandomWord() {
