@@ -19,18 +19,18 @@ public class HangmanGame {
     public static void drawHangman(int numberOfErrors) {
         if (numberOfErrors == 0) {
             System.out.println("_____ ");
-            System.out.println("|   |");
-            System.out.println("|   O");
-            System.out.println("|  /|\\ ");
-            System.out.println("|   |");
-            System.out.println("| _/ \\_");
+            System.out.println("|    ");
+            System.out.println("|    ");
+            System.out.println("|       ");
+            System.out.println("|    ");
+            System.out.println("|      ");
             System.out.println("________");
         } else if (numberOfErrors == 1) {
             System.out.println("_____ ");
             System.out.println("|   |");
             System.out.println("|    ");
             System.out.println("|       ");
-            System.out.println("|   ");
+            System.out.println("|    ");
             System.out.println("| _/  ");
             System.out.println("________");
         } else if (numberOfErrors == 2) {
@@ -81,7 +81,7 @@ public class HangmanGame {
             System.out.println("|   |");
             System.out.println("| _/ \\_");
             System.out.println("________");
-            System.out.printf(" Sorry you lost");
+            System.out.println(" Sorry you lost");
         }
     }
 
