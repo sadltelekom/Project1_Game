@@ -4,7 +4,7 @@ public class HangmanGame {
     static Scanner scanner = new Scanner(System.in);
     static int numberOfErrors = 0;
     static String wordToGuess;
-    static String alreadyGuessed;
+    static String alreadyGuessed = "";
 
     public static void startGame() {
         // Print Intro
@@ -15,7 +15,7 @@ public class HangmanGame {
         System.out.println("So choose wise.");
         wordToGuess = Words.getRandomWord();
         // Initialise alreadyGuessed
-        for (int i = 0; i < wordToGuess.length() - 1; i++) {
+        for (int i = 0; i < wordToGuess.length(); i++) {
             alreadyGuessed = alreadyGuessed + "_";
         }
 
@@ -30,7 +30,8 @@ public class HangmanGame {
         // if input wrong -> increase numberOfErrors and draw hangman
         getUserInput();
         drawAlreadyGuessed();
-
+        getUserInput();
+        drawAlreadyGuessed();
     }
 
     public static void getUserInput() {
@@ -132,13 +133,16 @@ public class HangmanGame {
         // For every letter in wordToGuess we need to check if guess is equal and return this String and add it to alreadyGUessed
         // If no match add an Underscore
         // Return the made up strings nd save it to another variable: alreadyGuessed
+        // need to replace Chars instead of concatinating
 
+
+        System.out.println(alreadyGuessed);
         for (int i = 0; i < wordToGuess.length() - 1; i++) {
             if (wordToGuess.charAt(i) == guess.charAt(0)) {
-                alreadyGuessed += guess.charAt(0);
+               alreadyGuessed = alreadyGuessed.substring(0,i)+ guess.charAt(0) +alreadyGuessed.substring(i+1);
 
             } else {
-                alreadyGuessed += alreadyGuessed.charAt(i);
+                alreadyGuessed = alreadyGuessed.substring(0,i)+alreadyGuessed.substring(i);
             }
         }
 
