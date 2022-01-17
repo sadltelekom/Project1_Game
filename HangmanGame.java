@@ -14,17 +14,24 @@ public class HangmanGame {
         System.out.println("7 tries will determine if you live or die ... ");
         System.out.println("So choose wise.");
         wordToGuess = Words.getRandomWord();
+        // Initialise alreadyGuessed
+        for (int i = 0; i < wordToGuess.length()-1;i++) {
+            alreadyGuessed = alreadyGuessed + "_";
+        }
+
         Words.drawGuessingDashes(wordToGuess);
         System.out.println();
         runGame();
 
     }
+
     public static void runGame() {
         // ask user for input ? If correct input showLetters.
         // if input wrong -> increase numberOfErrors and draw hangman
         getUserInput();
 
     }
+
     public static void getUserInput() {
         // get input and check it.
         // ask for letter or solution to word.
@@ -45,10 +52,12 @@ public class HangmanGame {
             numberOfErrors++;
         }
     }
+
     public static void checkWin() {
         // Loose if number of errors >= 7
         // win if userguess matches with word
     }
+
     public static void drawHangman(int numberOfErrors) {
         if (numberOfErrors == 0) {
             System.out.println("_____ ");
