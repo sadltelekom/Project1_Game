@@ -122,8 +122,16 @@ public class HangmanGame {
         // For every letter in wordToGuess we need to check if guess is equal and return this String and add it to alreadyGUessed
         // If no match add an Underscore
         // Return the made up strings nd save it to another variable: alreadyGuessed
+        for (int i=0;i<wordToGuess.length()-1;i++){
+            if (wordToGuess.charAt(i)==guess.charAt(0)){
+                alreadyGuessed += guess.charAt(0);
 
-        return "";
+            }else
+            {
+                alreadyGuessed+= alreadyGuessed.charAt(i);
+            }
+        }
+        return alreadyGuessed;
 
     }
 
